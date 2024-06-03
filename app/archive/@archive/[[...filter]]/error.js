@@ -1,6 +1,6 @@
 "use client"
 
-export default function FilterError({ error, reset }) {
+export default function FilterError({ error }) {
     
     return (
         <div id="error">
