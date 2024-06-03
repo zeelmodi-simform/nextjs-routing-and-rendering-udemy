@@ -1,0 +1,16 @@
+{
+    "editor.formatOnType": true,
+    "editor.formatOnSaveMode": "file",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.organizeImports": "explicit"
+    },
+    "prettier.trailingComma": "all",
+    "editor.formatOnPaste": true,
+    "eslint.format.enable": true,
+    "[javascript | javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+}
