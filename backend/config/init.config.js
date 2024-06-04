@@ -6,15 +6,15 @@ export function initDb() {
         CREATE TABLE IF NOT EXISTS news (id INTEGER PRIMARY KEY, slug TEXT UNIQUE, title TEXT, content TEXT, date TEXT, image TEXT)
     `).run()
 
-    const { count } = db.prepare(`SELECT COUNT(*) from news`).get()
-    
+    const { count } = db.prepare(`SELECT COUNT(*) as count from news`).get()
+
     if (count === 0) {
-        const insert = db.prepare(`
-            INSERT INTO news (slug, title, content, date, image) VALUES (?, ?, ?, ?, ?)
-        `);
+        const insert = db.prepare(
+        'INSERT INTO news (slug, title, content, date, image) VALUES (?, ?, ?, ?, ?)'
+        );
 
         DUMMY_NEWS.forEach((news) => {
-            insert.run(news.slug, news.title, news.content, news.date, news.image)
-        })
-    }
+        insert.run(news.slug, news.title, news.content, news.date, news.image);
+        });
+    };
 }
